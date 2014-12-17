@@ -9,12 +9,12 @@
 // app settings
 
 var settings = {
-	'wp_client_id': '',
-	'wp_client_secret': '',
-	'slack_hook': '',
-	'slack_domain': '',
-	'slack_channel': '#channel',
-	'oauth_token': ''
+	'wp_client_id': '38236',
+	'wp_client_secret': 'zBM0kh7xxUZcA6tkPQeSkpUXKGNR9uhpLt2qqUwvEENKijxUhqGA2h4hUxg3KLfw',
+	'slack_hook': 'https://hooks.slack.com/services/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',
+	'slack_domain': 'a8c',
+	'slack_channel': '#scottomattic',
+	'oauth_token': 'XDzKH6D^HolU$$lRYvaUAqysYOaGRxD)1W#M#EsZD1NQlcB6IPx#i)*l@uH033SU'
 };
 
 // express
@@ -50,7 +50,7 @@ var authorization_uri = oauth2.authCode.authorizeURL({
 
 // boot the app
 
-var server = app.listen(3000, function () {
+var server = app.listen(80, function () {
 
 	var host = server.address().address
 	var port = server.address().port
