@@ -198,3 +198,30 @@ new CronJob('0 * * * * *', function() {
 		}
 	});
 }, null, true);
+
+// keep alive on heroku
+var http = require('http');
+
+function keepalive() {
+	setInterval(function() {
+		var options = {
+			host: 'notifyslack.herokuapp.com',
+			port: 80,
+			path: '/'
+		};
+		http.get(options, function(res) {
+			res.on('data', function(chunk) {
+				try {
+					// optional logging... disable after it's working
+					console.log("HEROKU Ping: " + chunk);
+				} catch (err) {
+					console.log(err.message);
+				}
+			});
+		}).on('error', function(err) {
+			console.log("Error: " + err.message);
+		});
+	}, 20 * 60 * 1000); // load every 20 minutes
+}
+
+keepalive();
