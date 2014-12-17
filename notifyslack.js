@@ -22,6 +22,10 @@ var settings = {
 var express = require('express'),
 app = express();
 
+// set port
+
+app.set('port', (process.env.PORT || 5000));
+
 // slack
 
 var Slack = require('node-slack');
@@ -50,7 +54,7 @@ var authorization_uri = oauth2.authCode.authorizeURL({
 
 // boot the app
 
-var server = app.listen(3000, function () {
+var server = app.listen(app.get('port'), function () {
 
 	var host = server.address().address
 	var port = server.address().port
