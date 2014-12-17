@@ -1,5 +1,12 @@
 {
   "name": "notifyslack",
+  "engines": {
+      "node": "0.10.x"
+  },
+  "repository": {
+      "type": "git",
+      "url": "git://github.com/scottsweb/notifyslack.git"
+  },
   "scripts": {
     "start": "node notifyslack.js"
   },
