@@ -140,6 +140,7 @@ new CronJob('0 * * * * *', function() {
 
 				switch(note.type) {
 
+					case "post_milestone_achievement":
 					case "like_milestone_achievement":
 
 						var text = ent.decode(note.subject.text);
