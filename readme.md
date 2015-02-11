@@ -4,7 +4,7 @@ This small node.js app will send your personal WordPress.com notifications to a 
 
 To get setup you will need:
 
-- To register a WordPress.com App
+- To register a [WordPress.com App](https://developer.wordpress.com/apps/)
 - Create a custom Slack Hook
 
 ## Setup the App
@@ -61,6 +61,17 @@ No new notifications.
 ```
 
 The app will check for new notifications every minute and post them to your Slack room.
+
+## Heroku
+
+The Heroku branch is for if you want to deploy the app online. You will need to move your app settings into [config variables](https://devcenter.heroku.com/articles/config-vars) and then deploy the app using:
+
+```
+git push heroku heroku:master
+```
+
+Heroku have a great [getting started](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction) guide to help you get setup.
+
 
 ## Bugs
 
