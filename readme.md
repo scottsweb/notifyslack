@@ -4,7 +4,7 @@
 
 * Status: ✔ Active
 * Contributors: [@scottsweb](http://twitter.com/scottsweb)
-* Description: This small node.js app will send your personal WordPress.com notifications to a Slack room.
+* Description: node.js app to send your personal WordPress.com notifications to a Slack room.
 * Author: [Scott Evans](http://scott.ee)
 * Author URI: [http://scott.ee](http://scott.ee)
 * License: GNU General Public License v2.0
