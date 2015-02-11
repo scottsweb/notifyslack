@@ -64,7 +64,7 @@ The app will check for new notifications every minute and post them to your Slac
 
 ## Heroku
 
-The Heroku branch is for if you want to deploy the app online. You will need to move your app settings into [config variables](https://devcenter.heroku.com/articles/config-vars) and then deploy the app using:
+The [Heroku branch](https://github.com/scottsweb/notifyslack/tree/heroku) is for if you want to deploy the app online. You will need to move your app settings into [config variables](https://devcenter.heroku.com/articles/config-vars) and then deploy the app using:
 
 ```
 git push heroku heroku:master
