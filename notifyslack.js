@@ -9,12 +9,12 @@
 // app settings
 
 var settings = {
-	'wp_client_id': '38236',
-	'wp_client_secret': 'zBM0kh7xxUZcA6tkPQeSkpUXKGNR9uhpLt2qqUwvEENKijxUhqGA2h4hUxg3KLfw',
-	'slack_hook': 'https://hooks.slack.com/services/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',
-	'slack_domain': 'a8c',
-	'slack_channel': '#scottomattic',
-	'oauth_token': 'XDzKH6D^HolU$$lRYvaUAqysYOaGRxD)1W#M#EsZD1NQlcB6IPx#i)*l@uH033SU'
+	'wp_client_id': process.env.wp_client_id,
+	'wp_client_secret': process.env.wp_client_secret,
+	'slack_hook': process.env.slack_hook,
+	'slack_domain': process.env.slack_domain,
+	'slack_channel': process.env.slack_channel,
+	'oauth_token': process.env.oauth_token
 };
 
 // express
@@ -65,8 +65,7 @@ var server = app.listen(app.get('port'), function () {
 // default view
 
 app.get('/', function (req, res) {
-	console.log('/');
-	if (settings.oauth_token == '') {
+	if (! settings.oauth_token) {
 		res.send('NotifySlack App - <a href="/auth">Grab your oAuth token</a>.');
 	} else {
 		res.send('NotifySlack App');
@@ -78,7 +77,7 @@ app.get('/', function (req, res) {
 app.get('/auth', function (req, res) {
 
 	// once an auth key is set bail
-	if (settings.oauth_token != '')
+	if (settings.oauth_token)
 		res.redirect('/'); return;
 
 	console.log(authorization_uri);
@@ -90,7 +89,7 @@ app.get('/auth', function (req, res) {
 app.get('/callback', function (req, res) {
 
 	// once an auth key is set bail
-	if (settings.oauth_token != '')
+	if (settings.oauth_token)
 		res.redirect('/'); return;
 
 	var code = req.query.code;
@@ -112,7 +111,7 @@ app.get('/callback', function (req, res) {
 
 new CronJob('0 * * * * *', function() {
 
-	if (settings.oauth_token == '' )
+	if (! settings.oauth_token)
 		return;
 
 	console.log('Running NotifySlack...');
