@@ -1,12 +1,12 @@
 // *********************** //
-// NotifySlack v0.00000001 //
+// NotifySlack v0.1        //
 // *********************** //
 
-// to-do: basic front end template for getting setup
-// 		  fix issue with marking notifications as seen
-//        implement a storage mechanism/make it into an app? requires authentication etc (too far?)
+// to-do:
+// basic front end template for getting setup
+// implement a storage mechanism/make it into an app? requires authentication etc
 
-// app settings
+// app settings (add as heroku config variables https://devcenter.heroku.com/articles/config-vars)
 
 var settings = {
 	'wp_client_id': process.env.wp_client_id,
