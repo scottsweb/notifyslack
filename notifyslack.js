@@ -1,10 +1,10 @@
 // *********************** //
-// NotifySlack v0.00000001 //
+// NotifySlack v0.1        //
 // *********************** //
 
-// to-do: basic front end template for getting setup
-// 		  fix issue with marking notifications as seen
-//        implement a storage mechanism/make it into an app? requires authentication etc (too far?)
+// to-do:
+// basic front end template for getting setup
+// implement a storage mechanism/make it into an app? requires authentication etc
 
 // app settings
 
@@ -136,6 +136,7 @@ new CronJob('0 * * * * *', function() {
 
 				switch(note.type) {
 
+					case "post_milestone_achievement":
 					case "like_milestone_achievement":
 
 						var text = ent.decode(note.subject.text);
