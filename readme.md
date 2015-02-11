@@ -1,4 +1,16 @@
+![WP and Slack Logo](http://cloud.scott.ee/images/notifyslack.png)
+
 # NotifySlack
+
+* Status: ✔ Active
+* Contributors: [@scottsweb](http://twitter.com/scottsweb)
+* Description: This small node.js app will send your personal WordPress.com notifications to a Slack room.
+* Author: [Scott Evans](http://scott.ee)
+* Author URI: [http://scott.ee](http://scott.ee)
+* License: GNU General Public License v2.0
+* License URI: [http://www.gnu.org/licenses/gpl-2.0.html](http://www.gnu.org/licenses/gpl-2.0.html)
+
+## About
 
 This small node.js app will send your personal WordPress.com notifications to a Slack room.
 
