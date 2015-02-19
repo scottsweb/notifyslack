@@ -136,6 +136,13 @@ new CronJob('0 * * * * *', function() {
 
 				switch(note.type) {
 
+					case "achieve_daily_streak":
+
+						var text = ent.decode(note.subject.text);
+						var title = 'WordPress.com: ' + ent.decode(note.subject.text);
+
+						break;
+						
 					case "post_milestone_achievement":
 					case "like_milestone_achievement":
 
