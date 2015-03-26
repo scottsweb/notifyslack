@@ -21,7 +21,7 @@ To get setup you will need:
 
 ## Setup the App
 
-Browse to the directory in your terminal app and run: `npm install`.
+Download or checkout this repository to your local machine. Browse to the downloaded directory in your terminal app and run: `npm install` (you will need to have [node and npm](https://nodejs.org/download/) on your system).
 
 ## Register a WordPress.com App
 
