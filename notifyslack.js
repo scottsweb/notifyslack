@@ -72,11 +72,6 @@ app.get('/', function (req, res) {
 // redirect to /auth with WordPress.com to get token
 
 app.get('/auth', function (req, res) {
-
-	// once an auth key is set bail
-	if (settings.oauth_token != '')
-		res.redirect('/'); return;
-
 	console.log(authorization_uri);
 	res.redirect(authorization_uri);
 });
@@ -84,10 +79,6 @@ app.get('/auth', function (req, res) {
 // callback service parsing the authorisation token and asking for the access token
 
 app.get('/callback', function (req, res) {
-
-	// once an auth key is set bail
-	if (settings.oauth_token != '')
-		res.redirect('/'); return;
 
 	var code = req.query.code;
 	console.log('/callback');
@@ -142,7 +133,7 @@ new CronJob('0 * * * * *', function() {
 						var title = 'WordPress.com: ' + ent.decode(note.subject.text);
 
 						break;
-						
+
 					case "post_milestone_achievement":
 					case "like_milestone_achievement":
 
