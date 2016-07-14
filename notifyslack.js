@@ -154,6 +154,14 @@ new CronJob('0 * * * * *', function() {
 
 						break;
 
+					case "scheduled_post_published":
+
+						var text = 'Not sure what post published or when, but it did!';
+						var title = 'WordPress.com: Scheduled post published:';
+						note.subject.icon = ':postal_horn:';
+
+						break;
+
 					default:
 
 						var text =  '<'+ note.body.header_link +'|'+ ent.decode(note.subject.text) +' »>';
