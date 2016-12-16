@@ -139,6 +139,10 @@ new CronJob('0 * * * * *', function() {
 
 				switch(note.type) {
 
+					// broken
+					case "jetpack_monitor_note":
+						break;
+
 					case "achieve_daily_streak":
 
 						var text = ent.decode(note.subject.text);
@@ -169,14 +173,17 @@ new CronJob('0 * * * * *', function() {
 				}
 
 				// send to slack
-				slack.send({
-					text: text,
-					channel: settings.slack_channel,
-					username: title,
-					icon_url: note.subject.icon,
-					unfurl_links: true,
-					link_names: 1
-				});
+				// ignore jetpack notes as they have no data
+				if ( note.type !== 'jetpack_monitor_note' ) {
+					slack.send({
+						text: text,
+						channel: settings.slack_channel,
+						username: title,
+						icon_url: note.subject.icon,
+						unfurl_links: true,
+						link_names: 1
+					});
+				}
 
 				// add to array mark as read
 				counts[note.id] = 1;
