@@ -1,7 +1,7 @@
 {
   "name": "notifyslack",
   "engines": {
-      "node": "4.8.x"
+      "node": "6.11.1"
   },
   "repository": {
       "type": "git",
@@ -11,11 +11,11 @@
     "start": "node notifyslack.js"
   },
   "dependencies": {
-    "cron": "^1.0.5",
-    "ent": "^2.0.0",
-    "express": "^4.10.4",
+    "cron": "^1.2.1",
+    "ent": "^2.2.0",
+    "express": "^4.15.3",
     "node-slack": "git://github.com/Dahlgren/node-slack.git#hook-url",
-    "restler": "^3.2.2",
+    "restler": "^3.4.0",
     "simple-oauth2": "^0.2.1"
   }
 }
