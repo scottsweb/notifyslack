@@ -75,7 +75,7 @@ app.get('/', function (req, res) {
 // redirect to /auth with WordPress.com to get token
 
 app.get('/auth', function (req, res) {
-
+	
 	// once an auth key is set bail
 	if (settings.oauth_token)
 		res.redirect('/'); return;
