@@ -77,8 +77,9 @@ app.get('/', function (req, res) {
 app.get('/auth', function (req, res) {
 	
 	// once an auth key is set bail
-	if (settings.oauth_token)
+	if (settings.oauth_token) {
 		res.redirect('/'); return;
+	}
 
 	console.log(authorization_uri);
 	res.redirect(authorization_uri);
@@ -89,8 +90,9 @@ app.get('/auth', function (req, res) {
 app.get('/callback', function (req, res) {
 
 	// once an auth key is set bail
-	if (settings.oauth_token)
+	if (settings.oauth_token) {
 		res.redirect('/'); return;
+	}
 
 	var code = req.query.code;
 	console.log('/callback');
