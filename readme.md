@@ -1,4 +1,4 @@
-![WP and Slack Logo](http://cloud.scott.ee/images/notifyslack.png)
+![WP and Slack Logo](https://scott.ee/images/notifyslack.png)
 
 # NotifySlack
 
